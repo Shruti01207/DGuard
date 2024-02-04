@@ -1,0 +1,73 @@
+<div class="outer">
+    <ng-container *ngIf="isSubmitted===false; else loader">
+        <div class="container">
+            <div class="row">
+                <div
+                    class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                    <div class="panel border bg-white">
+                        <div class="panel-heading">
+                            <h3 class="pt-3 fw-bold">Login</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form [formGroup]="loginForm">
+                                <div class="form-group pt-3">
+                                    <div class="input-field"
+                                        [class.error]="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">
+                                        <span class="fa fa-user p-2"></span>
+                                        <input type="email"
+                                            formControlName="email"
+                                            placeholder="email">
+                                    </div>
+                                </div>
+                                <ng-container
+                                    *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">
+                                    <small class="text-danger">*Email is
+                                        required</small>
+                                </ng-container>
+
+                                <div class="form-group pt-3">
+                                    <div class="input-field"
+                                        [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">
+                                        <span class="fa fa-lock p-2"></span>
+                                        <input type="{{passwordType}}"
+                                            formControlName="password"
+                                            placeholder="password">
+                                        <span class="fa {{visibilityIcon}}"
+                                            (click)="showHidePassword( )"></span>
+                                    </div>
+                                </div>
+                                <ng-container
+                                    *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">
+                                    <small class="text-danger">*Password is
+                                        required</small>
+                                </ng-container>
+
+                                <div class="form-inline fr mt-4">
+                                    <a href id="forget" class="fw-bold">Forgot
+                                        Password?</a>
+                                </div>
+                                <button type="submit"
+                                    class="btn btn-primary btn-block mt-4 w-100"
+                                    (click)="onSubmit( )">Submit</button>
+                                <div class="text-center pt-4 text-muted">Don't
+                                    have an account? <a routerLink="/signup"
+                                        id="forget" class="fw-bold">Sign up</a></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+
+    <ng-template #loader>
+        <div class="w-100 h-100 border border-dark d-flex align-items-center justify-content-center">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+        </div>
+         
+    </ng-template>
+
+</div>

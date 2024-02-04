@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+   height: 100%;
+}
+
+body {
+   margin: 0;
+   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* default styles */
+* {
+   list-style: none;
+   box-sizing: border-box;
+   color: black;
+}
+
+ul {
+   padding: 0;
+   margin: 0;
+}
+
+/* global styles for angular material */
+mat-card {
+   background-color: #d7b505 !important;
+}
+
+mat-drawer {
+   background-color: #1c1c1c !important;
+   color: black !important;
+
+}
+
+mat-drawer-content {
+   height: 100vh !important;
+}

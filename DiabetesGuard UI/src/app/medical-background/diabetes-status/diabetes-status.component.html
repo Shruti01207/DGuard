@@ -1,0 +1,41 @@
+<div class="container">
+    <mat-card class="mt-5 mx-4">
+
+        <mat-card-header>
+            <mat-card-title>
+                Diabetes Status
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="mt-4">
+            <form [formGroup]="diabetesStatus">
+                <div class="question-container">
+                    <label for="isdiabetic" class="fw-bold">Are you suffering from diabetes?</label>
+                    <div class="radio-btns">
+                        <mat-radio-group id="isdiabetic"formControlName="isDiabetic">
+                            <mat-radio-button value="yes">Yes</mat-radio-button>
+                            <mat-radio-button value="no">No</mat-radio-button>
+                            <mat-radio-button value="not-sure">Not Sure</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <label for="type" class="fw-bold">What is the type of diabetes you are suffering from?</label>
+                    <div class="radio-btns">
+                        <mat-radio-group id="type" formControlName="diabetesType">
+                            <mat-radio-button value="Type-A">Type-A</mat-radio-button>
+                            <mat-radio-button value="Type-B">Type-B</mat-radio-button>
+                            <mat-radio-button value="Type-C">Type-C</mat-radio-button>
+                            <mat-radio-button value="Gestational">Gestational</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" (click)="Save( )">Save</button>
+
+            </form>
+        </mat-card-content>
+
+
+    </mat-card>
+
+</div>

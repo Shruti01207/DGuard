@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\bin",
+    "\\Controllers",
+    "\\Data",
+    "\\Migrations",
+    "\\Models",
+    "\\Models\\Domain",
+    "\\Models\\Dto"
+  ],
+  "SelectedNode": "\\DiabetesGuard.API.csproj.user",
+  "PreviewInSolutionExplorer": false
+}

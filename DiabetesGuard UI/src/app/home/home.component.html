@@ -1,0 +1,44 @@
+<div class="chatbot-container">
+    <!-- <div id="header">
+        <h1>Chatbot</h1>
+    </div> -->
+    <div id="chatbot">
+        <div id="conversation" class="p-0">
+            <div class="chatbot-message scroll" #chatContainer id="chat-container">
+                <ng-container *ngFor="let message of messages; let i=index">
+
+                    <ng-container *ngIf="message.type==='text'">
+                        <p class="chatbot-text"
+                            [class.user-message.ms-auto]="message.sender==='user'">{{message.text}}</p>
+                    </ng-container>
+                    <ng-container *ngIf="message.type==='actions'">
+                        <div class="btn-container"
+                            class="d-flex">
+                            <div
+                                *ngFor='let action of message.actions; let j=index'>
+                                <span class="button-29 me-3" (click)="selectSuggestion(i,j)">{{action.title}}</span>
+                            </div>
+                        </div>
+
+                    </ng-container>
+                </ng-container>
+            </div>
+        </div>
+        <form id="input-form">
+            <div class="d-flex w-100">
+                <input id="input-field" type="text"
+                    placeholder="Type your message here"
+                    [(ngModel)]="messageRequest.Message"
+                    [ngModelOptions]="{standalone: true}" (keydown)="print( )">
+                <button type="submit" class="btn btn-primary"
+                    (click)="message( )">
+                    Send
+                </button>
+            </div>
+
+        </form>
+    </div>
+    <!-- 
+    <button (click)="refreshToken( )">RefreshToken</button> -->
+
+</div>

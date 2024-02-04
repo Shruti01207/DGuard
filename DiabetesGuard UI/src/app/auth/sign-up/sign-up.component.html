@@ -1,0 +1,113 @@
+<div class="outer">
+    <div class="container">
+        <form [formGroup]="signUpForm" (ngSubmit)="register( )">
+            <div class="row">
+                <div class="col-6">
+                    <div class="input-group mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Username"
+                            aria-label="Username" aria-describedby="basic-addon1" formControlName="username">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group mb-3 row">
+                        <label for="gender" class="form-label col-12 ps-0">Gender</label>
+                        <select class="form-select" id="gender" formControlName="gender">
+                            <option selected value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="non-binary">Non-binary</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="input-group mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-control" formControlName="email" placeholder="example@gmail.com">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group mb-3 row">
+                        <label for="dob" class="form-label col-12 ps-0">Date of Birth</label>
+                        <input type="date" id="dob" class="form-control" formControlName="DateOfBirth">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <label for="password" class="form-label col-12 ps-0">Password</label>
+                    <input type="password" id="password" class="form-control" formControlName="password" autocomplete="on" placeholder="Enter your password">
+                </div>
+                <!-- <div class="col-12">
+                    <label for="confirm_password" class="form-label col-12 ps-0">Confirm Password</label>
+                    <input type="password" id="confirm_password" class="form-control"
+                        placeholder="Re-Enter your password here">
+                </div> -->
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-lg btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
+
+
+
+</div>
+
+
+<!-- Old sign-up -->
+<!-- -->
+
+
+
+<!--  -->
+
+
+
+<!-- 
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading">
+                        <h3 class="pt-1 fw-bold">Sign Up</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form [formGroup]="signUpForm">
+    
+                            <div class="form-group pt-4">
+                                <div class="input-field">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input type="email" placeholder="Email" formControlName="email">
+                                </div>
+                                <small class="text-danger"
+                                    *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')">*Email
+                                    is required</small>
+                            </div>
+    
+                            <div class="form-group pt-4">
+                                <div class="input-field">
+                                    <span class="fa fa-lock p-1"></span>
+                                    <input type="{{passwordType}}" placeholder="password" formControlName="password">
+                                    <span class="fa {{visibilityIcon}}" (click)="showHidePassword( )"></span>
+                                </div>
+                                <small class="text-danger"
+                                    *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')">*Password
+                                    is required</small>
+                            </div>
+                            <div class="form-inline fr mt-2">
+                                <a href id="forget" class="fw-bold">Forgot
+                                    Password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block mt-4 w-100"
+                                (click)="onSubmit()">Submit</button>
+                            <div class="text-center pt-2 text-muted">Already
+                                have an account? <a routerLink="/login" id="forget" class="fw-bold">Login</a></div>
+                        </form>
+                    </div>
+    
+                </div>
+            </div>
+        </div> -->
